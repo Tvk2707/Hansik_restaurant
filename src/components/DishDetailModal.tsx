@@ -34,13 +34,13 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ dish, onClose,
           
           <div className="absolute bottom-3 left-3 flex gap-2">
             {dish.isBestSeller && (
-              <span className="bg-[#735c00] text-white text-xs px-2.5 py-1 rounded font-label-md">
-                Best Seller
+              <span className="bg-[#9c7c00] text-[#061b0e] px-3 py-1.5 rounded-full text-xs font-label-md font-bold shadow-sm flex items-center gap-1">
+                <span className="material-symbols-outlined text-[14px]">star</span> Best Seller
               </span>
             )}
             {dish.isNew && (
-              <span className="bg-[#b4cdb8] text-[#0b2013] text-xs px-2.5 py-1 rounded font-label-md">
-                Món mới
+              <span className="bg-[#b4cdb8] text-[#0b2013] px-3 py-1.5 rounded-full text-xs font-label-md font-bold shadow-sm flex items-center gap-1">
+                Mới
               </span>
             )}
           </div>
@@ -67,7 +67,7 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ dish, onClose,
 
           {/* Ingredients list */}
           {dish.ingredients && dish.ingredients.length > 0 && (
-            <div className="mb-6 bg-white p-3.5 rounded-lg border border-[#c3c8c1]/30">
+            <div className="bg-white p-3.5 rounded-lg border border-[#c3c8c1]/30">
               <span className="text-xs font-label-md text-[#061b0e] block mb-2 flex items-center gap-1">
                 <span className="material-symbols-outlined text-sm text-[#735c00]">eco</span>
                 Nguyên liệu tuyển chọn:
@@ -85,24 +85,7 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({ dish, onClose,
             </div>
           )}
 
-          <div className="flex gap-3 pt-3 border-t border-[#c3c8c1]/30">
-            <button
-              onClick={() => {
-                onPreOrder(dish);
-                onClose();
-              }}
-              className="flex-1 py-3 bg-[#061b0e] text-[#ffe088] rounded font-label-md text-sm hover:bg-[#1b3022] transition-colors flex items-center justify-center gap-2"
-            >
-              <span className="material-symbols-outlined text-base">add_circle</span>
-              Thêm vào đơn đặt bàn
-            </button>
-            <button
-              onClick={onClose}
-              className="px-6 py-3 border border-[#c3c8c1] text-[#061b0e] rounded font-label-md text-sm hover:bg-[#f0eded]"
-            >
-              Đóng
-            </button>
-          </div>
+
         </div>
       </div>
     </div>
